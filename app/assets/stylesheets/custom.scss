@@ -1,0 +1,59 @@
+/* mixins, variables, etc. */
+$white1: #EFEFEF;
+$black1: #2E2F30;
+$white2: #CCC;
+$white-light: #999;
+$white-light2: #BBB;
+$red1: #B00100;
+$red2: #730E15;
+$white3: #F7F7F7;
+$light1: #DADADA;
+$grey1: #666;
+
+.rails-default-error-page {
+  background-color: $white1;
+  color: $black1;
+  text-align: center;
+  font-family: arial, sans-serif;
+  margin: 0;
+}
+
+.rails-default-error-page div.dialog {
+  width: 95%;
+  max-width: 33em;
+  margin: 4em auto 0;
+}
+
+.rails-default-error-page div.dialog > div {
+  border: 1px solid $white2;
+  border-right-color: $white-light;
+  border-left-color: $white-light;
+  border-bottom-color: $white-light2;
+  border-top: $red1 solid 4px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+  background-color: white;
+  padding: 7px 12% 0;
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+}
+
+.rails-default-error-page h1 {
+  font-size: 100%;
+  color:$red2;
+  line-height: 1.5em;
+}
+
+.rails-default-error-page div.dialog > p {
+  margin: 0 0 1em;
+  padding: 1em;
+  background-color: $white3;
+  border: 1px solid $white2;
+  border-right-color: $white-light;
+  border-left-color: $white-light;
+  border-bottom-color: $white-light;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-color: $light1;
+  color: $grey1;
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+}
