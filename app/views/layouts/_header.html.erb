@@ -1,0 +1,27 @@
+<header class="navbar navbar-fixed-top nav-bar-blue">
+  <div class="container">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <%= link_to t("layouts.application.mms_title_short"), root_path, id: "logo", class: "navbar-brand brand-logo"%>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          <li class="nav-item active">
+            <a href="#" class="nav-link"><i class="fa fa-inbox"></i><%= t "static_pages.home.mms_home" %></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fa fa-user"></i><%= t ".nav_profile" %></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"><i class="fa fa-calendar-check-o"></i><%= t ".nav_teams" %></a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-nav-right">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-sign-in"></i><%= t ".nav_login" %></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,14 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="left">
+      <%= t ".copyright" %><b><%= t ".author" %></b>
+      <br><i class="fa fa-envelope-o"></i><%= t ".email" %><br>
+    </div>
+    <div class="right">
+      <ul>
+         <li><i class="fa fa-info-circle"></i><%= link_to t(".title_about"), about_path %></li>
+         <li><i class="fa fa-envelope-open-o"></i><%= link_to t(".title_contact"), contact_path %></li>
+      </ul>
+    </div>
+  </div>
+</footer>
