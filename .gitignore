@@ -54,3 +54,7 @@ config/database.yml
 bin/*
 
 db/schema.rb
+
+vendor/assets/images
+public/images
+Gemfile.lock

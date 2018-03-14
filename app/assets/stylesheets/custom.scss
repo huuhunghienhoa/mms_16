@@ -1,3 +1,6 @@
+@import "bootstrap";
+@import "font-awesome";
+
 /* mixins, variables, etc. */
 $white1: #EFEFEF;
 $black1: #2E2F30;
@@ -9,6 +12,8 @@ $red2: #730E15;
 $white3: #F7F7F7;
 $light1: #DADADA;
 $grey1: #666;
+$white-footer: #ffffff;
+$gray-border: #e5e5e5;
 
 .rails-default-error-page {
   background-color: $white1;
@@ -56,4 +61,45 @@ $grey1: #666;
   border-top-color: $light1;
   color: $grey1;
   box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+}
+
+.footer {
+  background: $white-footer;
+  border-top: 1px solid $gray-border;
+  font-size: 14px;
+  padding: 15px 0;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  position: relative;
+}
+
+.footer .right {
+  float:right;
+  width:50%;
+}
+
+.footer  .left {
+  float:left;
+  width:50%;
+}
+
+.footer  li {
+  float: left;
+  padding:5px;
+}
+
+.footer ul {
+  list-style: none;
+  float:right;
+}
+
+.footer  i {
+  padding-right: 4px;
 }

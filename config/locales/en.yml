@@ -30,9 +30,31 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  layout:
+  layouts:
     application:
-      mms_title: "MMS"
+      mms_title: "Member Manager System"
+      mms_title_short: "MMS"
+    header:
+      nav_teams: "Teams"
+      nav_profile: "Profile"
+      nav_login: "Login"
+    footer:
+      title_about: "About"
+      title_contact: "Contact"
+      copyright: "Copyright © 2018"
+      author: " Huu Hung "
+      email: "Email: huuhung1996@gmail.com"
+  static_pages:
+    home:
+      mms_home: "Home"
+      h3 : "Welcome to Member Manager System. Project 1"
+      sign_in: "Sign in now!"
+    about:
+      title: "About"
+      body: "This is Member Manager System project."
+    contact:
+      title: "Contact"
+      body: "Contact at here"
   public:
     404:
       title: "The page you were looking for doesn't exist (404)"
