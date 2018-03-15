@@ -38,6 +38,11 @@ en:
       nav_teams: "Teams"
       nav_profile: "Profile"
       nav_login: "Login"
+      nav_profile: "Profile"
+      nav_setting: "Settings"
+      nav_logout: "Logout"
+      nav_users: "Users"
+      nav_account: "Account"
     footer:
       title_about: "About"
       title_contact: "Contact"
@@ -70,3 +75,10 @@ en:
       title: "We're sorry, but something went wrong (500)"
       content1: "We're sorry, but something went wrong."
       content2: "If you are the application owner check the logs for more information."
+  sessions:
+    new:
+      login: "Log in"
+      sign_up: "Sign up now!"
+      remember_me: "Remember me on this computer"
+    create:
+      login_error: "Invalid email/password combination"

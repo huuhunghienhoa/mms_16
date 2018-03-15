@@ -16,6 +16,8 @@ gem "jbuilder", "~> 2.5"
 gem "bootstrap", "~> 4.0.0"
 gem "font-awesome-rails"
 gem "jquery-rails"
+gem "config"
+gem "bcrypt", "3.1.11"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

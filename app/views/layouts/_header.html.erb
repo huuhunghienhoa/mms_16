@@ -17,9 +17,25 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-nav-right">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fa fa-sign-in"></i><%= t ".nav_login" %></a>
+        <% if logged_in? %>
+          <li class="nav-item dropdown">
+            <%= link_to "#", class: "nav-link dropdown-toggle", data: { toggle: "dropdown"} do %>
+            <%= gravatar_for current_user, Settings.user.nav_avatar, "img-xs rounded-circle" %>
+            <% end %>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to t(".nav_profile"), "#", class: "dropdown-item" %>
+              <%= link_to t(".nav_setting"), "#", class: "dropdown-item" %>
+              <div class="dropdown-divider"></div>
+              <%= link_to t(".nav_logout"), logout_path, class: "dropdown-item", method: :delete %>
+            </div>
           </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to login_path, class: "nav-link" do %>
+              <i class="fa fa-sign-in"></i><%= t ".nav_login" %>
+            <% end %>
+          </li>
+        <% end %>
         </ul>
       </div>
     </nav>
