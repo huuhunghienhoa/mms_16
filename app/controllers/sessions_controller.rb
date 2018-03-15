@@ -26,11 +26,10 @@ class SessionsController < ApplicationController
   end
 
   def redirect_after_login
-    #Chua co trang Admin nen tam thoi redirect ve root
     if @user.admin
-      redirect_to root_url
+      redirect_to admin_root_path
     else
-      redirect_to @user
+      redirect_back_or @user
     end
   end
 end

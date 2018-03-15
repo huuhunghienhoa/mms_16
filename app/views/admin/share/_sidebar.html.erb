@@ -1,0 +1,53 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item nav-profile">
+      <div class="nav-link">
+         <div class="profile-image">
+           <%= gravatar_for current_user, Settings.user.nav_avatar, "gravatar" %>
+           <span class="online-status online"></span>
+         </div>
+         <div class="profile-name">
+            <p class="name"><%= current_user.name %></p>
+         </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <%= link_to admin_root_path, class: "nav-link" do %>
+        <i class="fa fa-tachometer"></i><span class="menu-title"><%= t "admin.dashboard" %></span>
+      <% end %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#teams-page", class: "nav-link", data: { toggle: "collapse"} do %>
+        <i class="fa fa-users"></i><span class="menu-title dropdown-toggle"><%= t "admin.teams.title" %></span>
+      <% end %>
+      <div class="collapse" id="teams-page">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><%= link_to t("admin.teams.create"), new_admin_team_path, class: "nav-link" %></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#users-page", class: "nav-link", data: { toggle: "collapse"} do %>
+        <i class="fa fa-user"></i><span class="menu-title dropdown-toggle"><%= t "admin.users.title" %></span>
+      <% end %>
+      <div class="collapse" id="users-page">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><%= link_to t("admin.users.create"), new_admin_user_path, class: "nav-link" %></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <%= link_to "#positions-page", class: "nav-link", data: { toggle: "collapse"} do %>
+        <i class="fa fa-crosshairs"></i><span class="menu-title dropdown-toggle"><%= t "admin.positions.title" %></span>
+      <% end %>
+      <div class="collapse" id="positions-page">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><%= link_to t("admin.positions.create"), new_admin_position_path, class: "nav-link" %></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item purchase-button">
+      <%= link_to t("static_pages.home.mms_home"), root_url , class: "nav-link" %>
+    </li>
+  </ul>
+</nav>

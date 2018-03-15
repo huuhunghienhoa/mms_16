@@ -82,3 +82,19 @@ en:
       remember_me: "Remember me on this computer"
     create:
       login_error: "Invalid email/password combination"
+  admin:
+    title: " Admin Manager"
+    dashboard: "Dashboard"
+    users:
+      title: "Users"
+      create: "New User"
+    teams:
+      title: "Teams"
+      create: "New Team"
+    positions:
+      title: "Positions"
+      create: "New Position"
+    projects:
+      title: "Projects"
+      create: "New Project"
+
