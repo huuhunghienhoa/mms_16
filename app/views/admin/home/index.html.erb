@@ -1,0 +1,67 @@
+<% provide :title, t("admin.title") %>
+  <div class="container-fluid page-body-wrapper">
+    <%= render "admin/share/sidebar" %>
+    <div class="main-panel">
+      <div class="content-wrapper">
+        <div class="row">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 grid-margin stretch-card">
+            <div class="card card-statistics">
+              <div class="card-body">
+                <div class="clearfix">
+                  <div class="float-left">
+                    <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+                  </div>
+                  <div class="float-right">
+                    <p class="card-text text-right"><%= t "admin.teams.title" %></p>
+                    <div class="fluid-container">
+                      <h3 class="card-title font-weight-bold text-right mb-0"></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 grid-margin stretch-card">
+            <div class="card card-statistics">
+              <div class="card-body">
+                <div class="clearfix">
+                  <div class="float-left">
+                    <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+                  </div>
+                  <div class="float-right">
+                    <p class="card-text text-right"><%= t "admin.projects.title" %></p>
+                    <div class="fluid-container">
+                      <h3 class="card-title font-weight-bold text-right mb-0"></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 grid-margin stretch-card">
+            <div class="card card-statistics">
+              <div class="card-body">
+                <div class="clearfix">
+                  <div class="float-left">
+                     <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
+                  </div>
+                  <div class="float-right">
+                    <p class="card-text text-right"><%= t "admin.users.title" %></p>
+                    <div class="fluid-container">
+                      <h3 class="card-title font-weight-bold text-right mb-0"></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%= render "admin/projects/project" %>
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 grid-margin">
+          </div>
+        </div>
+        <%= render "admin/activities/activity" %>
+      </div>
+    </div>
+</div>
