@@ -1,10 +1,3 @@
-class Admin::HomeController < ApplicationController
-  before_action :logged_in_user
-  before_action :require_admin
-
+class Admin::HomeController < AdminController
   def index; end
-
-  def require_admin
-    redirect_to root_path unless current_user.admin?
-  end
 end

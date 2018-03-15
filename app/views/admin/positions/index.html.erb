@@ -1,0 +1,28 @@
+<% provide :title, t("admin.positions.title") %>
+<h1><%= t "admin.positions.all" %></h1>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-lg-9">
+  <% if @positions.any? %>
+    <%= will_paginate %>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col"><%= t "admin.positions.position.col_id" %></th>
+          <th scope="col"><%= t "admin.positions.position.col_name" %></th>
+          <th scope="col"><%= t "admin.positions.position.col_short_name" %></th>
+          <th scope="col"><%= t "admin.positions.position.col_tool" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "position", collection: @positions %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  <% else %>
+    <div class="alert alert-danger"><%= t "admin.positions.empty" %></div>
+  <% end %>
+  </div>
+</div>
