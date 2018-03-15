@@ -1,0 +1,7 @@
+user:
+  email_max_length: 255
+  password_min_length: 6
+  name_max_length: 50
+  avatar_size: 80
+  remember: "1"
+  nav_avatar: 55
