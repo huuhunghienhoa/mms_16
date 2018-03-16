@@ -1,0 +1,22 @@
+<% provide :title, @position.name %>
+<h1><%= @position.name %></h1>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-lg-9">
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col"><%= t "admin.positions.position.col_id" %></th>
+          <th scope="col"><%= t "admin.positions.position.col_name" %></th>
+          <th scope="col"><%= t "admin.positions.position.col_short_name" %></th>
+          <th scope="col"><%= t "admin.positions.position.col_tool" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "position", object: @position %>
+      </tbody>
+    </table>
+  </div>
+</div>

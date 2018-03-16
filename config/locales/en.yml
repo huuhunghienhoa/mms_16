@@ -92,9 +92,32 @@ en:
       title: "Teams"
       create: "New Team"
     positions:
+      all: "All Positions"
+      empty: "Empty!"
       title: "Positions"
       create: "New Position"
+      position:
+        confirm_delete: "You sure?"
+        edit: "Edit"
+        edit_title: "Edit position"
+        delete: "Delete"
+        col_id: "ID"
+        col_name: "Name"
+        col_short_name: "Short Name"
+        col_tool: "Tool"
+        create_success: "Position created!"
+        create_fail: "Creating position was failed"
+        update_success : "Position updated!"
+        delete_success: "Position deleted!"
+        delete_fail: "Deleting position was failed"
     projects:
       title: "Projects"
       create: "New Project"
+  shared:
+    error_messages:
+      form_error: "The form contains"
+      error: "error"
+  users:
+    user:
+      login_error: "Please log in."
 

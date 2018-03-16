@@ -5,3 +5,8 @@ user:
   avatar_size: 80
   remember: "1"
   nav_avatar: 55
+position:
+  min_name: 2
+  max_name: 50
+  max_short_name: 10
+

@@ -1,0 +1,6 @@
+<tr>
+  <th scope="row"><%= position.id %></th>
+  <td><%= link_to position.name, admin_position_path(position) %></td>
+  <td><%= position.short_name %></td>
+  <td><%= link_to t(".edit"), edit_admin_position_path(position) %> | <%= link_to t(".delete"), admin_position_path(position), method: :delete, data: {confirm: t(".confirm_delete")} %></td>
+</tr>

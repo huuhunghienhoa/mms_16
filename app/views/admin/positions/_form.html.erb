@@ -1,0 +1,8 @@
+<%= form_for [:admin, @position] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :short_name %>
+    <%= f.text_field :short_name, class: "form-control" %>
+    <%= f.submit :submit, class: "btn btn-primary btn-block" %>
+<% end %>
