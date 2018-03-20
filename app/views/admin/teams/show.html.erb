@@ -1,0 +1,40 @@
+<% provide :title, t("admin.teams.members") %>
+<h1><%= t "admin.teams.members" %></h1>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-lg-6">
+    <% if @users.any? %>
+    <%= will_paginate @users %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col"><%= t "admin.teams.team.col_stt" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_name" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_tool" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each_with_index do |u, index| %>
+        <tr>
+          <th scope="row">
+            <% if params[:page] && params[:page].to_i > 1
+                 number_start = params[:page].to_i %>
+              <%= ((number_start-1)* Settings.paginate.per_page) +1 %>
+            <% else %>
+              <%= index + 1 %>
+            <% end %>
+          </th>
+          <td><%= u.name %></td>
+          <td><%= link_to t("admin.teams.team.move_user"), "#" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= will_paginate @users %>
+    <% else %>
+    <div class="alert alert-danger"><%= t "admin.teams.empty" %></div>
+    <% end %>
+  </div>
+</div>

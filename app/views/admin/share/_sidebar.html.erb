@@ -22,6 +22,7 @@
       <% end %>
       <div class="collapse" id="teams-page">
         <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><%= link_to t("admin.teams.all"), admin_teams_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to t("admin.teams.create"), new_admin_team_path, class: "nav-link" %></li>
         </ul>
       </div>

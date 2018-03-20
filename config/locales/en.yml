@@ -88,6 +88,9 @@ en:
     users:
       title: "Users"
       create: "New User"
+      user:
+        update: "Update"
+        move_team: "Move Team for User"
     teams:
       title: "Teams"
       create: "New Team"
@@ -110,6 +113,38 @@ en:
         update_success : "Position updated!"
         delete_success: "Position deleted!"
         delete_fail: "Deleting position was failed"
+    teams:
+      all: "All Teams"
+      empty: "Empty!"
+      title: "Teams"
+      create: "New Team"
+      members: "Members"
+      team:
+        confirm_delete: "You sure?"
+        edit: "Edit"
+        edit_title: "Edit team"
+        delete: "Delete"
+        col_id: "ID"
+        col_name: "Name"
+        col_description: "Description"
+        col_leader: "Leader"
+        col_members: "Members"
+        col_tool: "Tool"
+        col_stt: "STT"
+        move_user: "Move"
+        create_success: "Team created!"
+        create_fail: "Creating team is failed"
+        create_fail: "Creating team was failed"
+        update_success : "Team updated!"
+        delete_success: "Team deleted!"
+        delete_fail: "Deleting team was failed"
+        submit_create: "Create"
+        submit_update: "Update"
+        not_allowed: "Deletion not allowed because this team has members"
+      form:
+        name: "name"
+        description: "description"
+        leader: "leader"
     projects:
       title: "Projects"
       create: "New Project"
@@ -120,4 +155,6 @@ en:
   users:
     user:
       login_error: "Please log in."
+  upload:
+    mess_limit_size: "should be less than 5MB"
 

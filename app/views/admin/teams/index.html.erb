@@ -1,0 +1,31 @@
+<% provide :title, t("admin.teams.title") %>
+<h1><%= t "admin.teams.all" %></h1>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-lg-9">
+  <%= link_to t("admin.teams.create"), new_admin_team_path, class: "btn btn-success" %>
+  <% if @teams.any? %>
+    <%= will_paginate %>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col"><%= "Logo" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_name" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_description" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_leader" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_members" %></th>
+          <th scope="col"><%= t "admin.teams.team.col_tool" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "team", collection: @teams %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  <% else %>
+    <div class="alert alert-danger"><%= t "admin.teams.empty" %></div>
+  <% end %>
+  </div>
+</div>

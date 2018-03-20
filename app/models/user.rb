@@ -15,6 +15,8 @@ class User < ApplicationRecord
   belongs_to :team
   belongs_to :position
 
+  scope :newest, ->{order(created_at: :desc)}
+
   def self.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create string, cost: cost
