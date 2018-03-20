@@ -1,0 +1,14 @@
+<% if @status %>
+  var start = $('#user_<%= @user.id %> .count_user').text();
+  var users = $('.count_user');
+  $('#user_<%= @user.id %>').remove();
+
+  for (var i = parseInt(start); i < users.length; i++) {
+    number = $(users[i]).text()-1;
+    $(users[i]).text(number);
+  }
+
+  $('#form_move_member').html('<%= I18n.t("admin.teams.team.move_success") %>');
+<% else %>
+  alert('<%= I18n.t("admin.teams.team.not_any_change") %>');
+<% end %>

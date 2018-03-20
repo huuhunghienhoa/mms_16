@@ -6,8 +6,13 @@
   <%= f.label t(".description") %><br>
   <%= f.text_field :description, class: "form-control" %>
 
+  <%= f.label t(".members") %><br>
+  <%= collection_select :team, :user_ids, @users, :id, :name, {},
+  {class: "form-control chosen-select",multiple: true,data: { placeholder: t("admin.teams.team.choose_members") }} %>
+  <button type="button" class="btn btn-info" id="emptymember"><%= t "admin.teams.team.empty_member_team" %></button><br>
+
   <%= f.label t(".leader") %><br>
-  <%=collection_select(:team, :leader_id, @users, :id, :name, {}, {class: "form-control"})%>
+  <%= collection_select :team, :leader_id, @users, :id, :name, { include_blank: t("admin.teams.team.choose_leader")}, {class: "form-control"} %>
 
   <%= image_tag @team.logo.url, id: "show_logo", class: "show_logo img-thumbnail" %>
   <%= f.file_field :logo, accept: "image/jpeg,image/gif,image/png", class: "form-control" %>

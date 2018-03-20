@@ -5,7 +5,10 @@
     <%= render "admin/share/sidebar" %>
   </div>
   <div class="col-lg-6">
+    <div id="form_move_member" class="form_move_member"></div>
+    <%= link_to t("admin.teams.add_member"), add_member_admin_management_team_path(@team), class: "btn btn-primary" %>
     <% if @users.any? %>
+    <%= link_to t("admin.teams.team.delete_all_member"), empty_member_team_admin_management_team_path(@team), class: "btn btn-danger", method: :patch, remote: true, data: {confirm: t("admin.teams.team.confirm_delete")} %>
     <%= will_paginate @users %>
     <table class="table table-bordered">
       <thead>
@@ -17,17 +20,13 @@
       </thead>
       <tbody>
         <% @users.each_with_index do |u, index| %>
-        <tr>
-          <th scope="row">
-            <% if params[:page] && params[:page].to_i > 1
-                 number_start = params[:page].to_i %>
-              <%= ((number_start-1)* Settings.paginate.per_page) +1 %>
-            <% else %>
-              <%= index + 1 %>
-            <% end %>
+        <tr id="user_<%= u.id %>">
+          <th scope="row" class="count_user">
+            <%= get_order_number params[:page], index %>
           </th>
           <td><%= u.name %></td>
-          <td><%= link_to t("admin.teams.team.move_user"), "#" %></td>
+          <td><%= link_to t("admin.teams.team.move_user"), move_team_admin_management_user_path(u),remote: true %> |
+              <%= link_to t("admin.teams.team.delete"), delete_team_admin_management_user_path(u), method: :delete, data: {confirm: t("admin.teams.team.confirm_delete")},remote: true %></td>
         </tr>
         <% end %>
       </tbody>
