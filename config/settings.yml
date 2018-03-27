@@ -9,4 +9,10 @@ position:
   min_name: 2
   max_name: 50
   max_short_name: 10
+upload:
+  max_size: 5
+  logo_width: 300
+  logo_height: 300
+paginate:
+  per_page: 10
 

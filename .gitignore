@@ -58,3 +58,4 @@ db/schema.rb
 vendor/assets/images
 public/images
 Gemfile.lock
+public/uploads

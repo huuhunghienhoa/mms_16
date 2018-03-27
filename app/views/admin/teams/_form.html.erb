@@ -1,0 +1,17 @@
+<%= form_for [:admin, @team] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label t(".name") %><br>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label t(".description") %><br>
+  <%= f.text_field :description, class: "form-control" %>
+
+  <%= f.label t(".leader") %><br>
+  <%=collection_select(:team, :leader_id, @users, :id, :name, {}, {class: "form-control"})%>
+
+  <%= image_tag @team.logo.url, id: "show_logo", class: "show_logo img-thumbnail" %>
+  <%= f.file_field :logo, accept: "image/jpeg,image/gif,image/png", class: "form-control" %>
+
+  <%= f.submit yield(:submit) ,class: "btn btn-success btn-block" %>
+<% end %>
+<%= javascript_include_tag "team" %>
