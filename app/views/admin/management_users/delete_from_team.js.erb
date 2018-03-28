@@ -1,0 +1,8 @@
+var start = $('#user_<%= @user.id %> .count_user').text();
+var users = $('.count_user');
+$('#user_<%= @user.id %>').remove();
+
+for (var i = parseInt(start); i < users.length; i++) {
+  number = $(users[i]).text()-1;
+  $(users[i]).text(number);
+}

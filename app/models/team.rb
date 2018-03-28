@@ -10,6 +10,8 @@ class Team < ApplicationRecord
 
   scope :newest, ->{order(created_at: :desc)}
 
+  accepts_nested_attributes_for :users, allow_destroy: true
+
   mount_uploader :logo, LogoUploader
 
   def logo_size

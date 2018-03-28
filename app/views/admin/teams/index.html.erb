@@ -7,7 +7,6 @@
   <div class="col-lg-9">
   <%= link_to t("admin.teams.create"), new_admin_team_path, class: "btn btn-success" %>
   <% if @teams.any? %>
-    <%= will_paginate %>
     <table class="table table-sm">
       <thead>
         <tr>

@@ -16,7 +16,6 @@ class Admin::TeamsController < AdminController
 
   def create
     @team = Team.new team_params
-    @users = User.all
     if @team.save
       flash[:success] = t "admin.teams.team.create_success"
       redirect_to admin_teams_path
@@ -26,7 +25,9 @@ class Admin::TeamsController < AdminController
     end
   end
 
-  def edit; end
+  def edit
+    @users = User.all
+  end
 
   def update
     if @team.update team_params
@@ -53,7 +54,7 @@ class Admin::TeamsController < AdminController
   private
 
   def team_params
-    params.require(:team).permit :name, :description, :leader_id, :logo
+    params.require(:team).permit :name, :description, :leader_id, :logo, user_ids: []
   end
 
   def load_team

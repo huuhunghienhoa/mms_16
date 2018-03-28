@@ -123,3 +123,18 @@ h1 {
 .show_logo {
   width: 200px;
 }
+
+.pagination {
+  margin: 10px 0px;
+}
+.pagination li {
+  margin: 0 3px;
+}
+
+.pagination .active a {
+  color:red;
+}
+
+.form_move_member {
+  margin: 10px 0px;
+}

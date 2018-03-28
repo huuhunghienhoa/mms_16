@@ -1,0 +1,3 @@
+$('.table-bordered').html('<%= I18n.t("admin.teams.team.confirm_delete_team") %>');
+
+$('.table-bordered').append('<%= link_to I18n.t("admin.teams.team.delete_this_team"), admin_team_path(@team), method: :delete, data: {confirm: I18n.t("admin.teams.team.confirm_delete")} %>');

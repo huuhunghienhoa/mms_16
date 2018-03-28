@@ -1,0 +1,18 @@
+<% provide :title, t("admin.teams.team.add_member_title") + ": #{@team.name}" %>
+<div class="row">
+  <div class="col-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-6">
+    <h1><%= t "admin.teams.team.add_member_title" %> <%= @team.name %></h1>
+    <%= form_for [:admin, @team], url:  add_member_admin_management_team_path do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= collection_select :team, :user_ids, @users, :id, :name, {},
+      {:class=>"form-control chosen-select",multiple: true, data: { placeholder: t("admin.teams.team.choose_members") }} %>
+      <button type="button" class="btn btn-info" id="emptymember"><%= t "admin.teams.team.empty_member_team" %></button><br>
+      <%= f.submit t("admin.users.user.update") ,class: "btn btn-success btn-block" %>
+    <% end %>
+  </div>
+</div>
+<%= javascript_include_tag "team" %>
