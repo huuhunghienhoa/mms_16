@@ -1,1 +1,13 @@
- <div class="row"></div>
+<tr id="project_<%= project.id %>">
+  <td><%= link_to project.name, [:admin, project] %></td>
+  <td><%= project.date_start.strftime t("layouts.application.time_default") %></td>
+  <td><%= project.date_end.strftime t("layouts.application.time_default") %></td>
+  <td><%= project.team.name %></td>
+  <td><%= project.leader.name %></td>
+  <td><%= project.users.size %></td>
+  <td>
+    <%= link_to "<i class='fa fa-trash'></i>".html_safe, admin_project_path(project), method: :delete, data: {confirm: t(".confirm_delete")} %> |
+    <%= link_to "<i class='fa fa-pencil'></i>".html_safe, edit_admin_project_path(project) %>
+  </td>
+</tr>
+

@@ -1,8 +1,8 @@
 class Admin::ManagementUsersController < AdminController
-  before_action :load_user
+  before_action :load_user, except: :load_user_by_team
 
   def move_to_other_team
-    @teams = Team.all
+    @teams = Team.newest
   end
 
   def update_to_other_team
@@ -24,6 +24,14 @@ class Admin::ManagementUsersController < AdminController
       else
         format.html{redirect_to admin_team_path(@user.team)}
       end
+    end
+  end
+
+  def load_user_by_team
+    @users_in_team = User.users_in_team(params[:team_id]).map{|u| {id: u.id, name: u.name}} if params[:team_id]
+    @users_in_team = User.all.map{|u| {id: u.id, name: u.name}} if @users_in_team.blank?
+    respond_to do |format|
+      format.json{render json: {users: @users_in_team}}
     end
   end
 

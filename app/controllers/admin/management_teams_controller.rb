@@ -2,7 +2,7 @@ class Admin::ManagementTeamsController < AdminController
   before_action :load_team
 
   def add_member
-    @users = User.all
+    @users = User.newest
   end
 
   def update_member_team

@@ -1,5 +1,6 @@
 class Admin::TeamsController < AdminController
   before_action :load_team, except: %i(index new create)
+  before_action :load_users, except: %i(index show destroy)
 
   def index
     @teams = Team.newest.paginate page: params[:page], per_page: Settings.paginate.per_page
@@ -11,7 +12,6 @@ class Admin::TeamsController < AdminController
 
   def new
     @team = Team.new
-    @users = User.all
   end
 
   def create
@@ -25,9 +25,7 @@ class Admin::TeamsController < AdminController
     end
   end
 
-  def edit
-    @users = User.all
-  end
+  def edit; end
 
   def update
     if @team.update team_params
@@ -60,5 +58,9 @@ class Admin::TeamsController < AdminController
   def load_team
     @team = Team.find_by id: params[:id]
     @team || render(file: "public/404.html", status: 404, layout: true)
+  end
+
+  def load_users
+    @users = User.newest
   end
 end

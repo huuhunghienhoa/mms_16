@@ -1,0 +1,36 @@
+<h1><%= t "admin.projects.all" %></h1>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-lg-8">
+    <%= link_to t("admin.projects.create"), new_admin_project_path, class: "btn btn-info" %>
+    <span class="count"><%= @projects.size %></span> <%= t "admin.projects.title" %>
+    <%= form_tag admin_projects_path, method: :get, remote: true, class: "form-inline float-right" do %>
+      <%= collection_select :project , :filter, @teams, :id, :name, { include_blank: t("admin.projects.choose_project")}, class: "form-control" %>
+      <%= submit_tag t("admin.projects.filter"), class: "btn btn-info" %>
+    <% end %>
+    <% if @projects.any? %>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col"><%= t "admin.projects.project.col_name" %></th>
+            <th scope="col"><%= t "admin.projects.project.col_start_date" %></th>
+            <th scope="col"><%= t "admin.projects.project.col_end_date" %></th>
+            <th scope="col"><%= t "admin.projects.project.col_belong_team" %></th>
+            <th scope="col"><%= t "admin.projects.project.col_project_leader" %></th>
+            <th scope="col"><%= t "admin.projects.project.col_members" %></th>
+            <th scope="col"><%= t "admin.projects.project.col_tool" %></th>
+          </tr>
+        </thead>
+        <tbody id="projects">
+          <%= render @projects %>
+        </tbody>
+      </table>
+      <%= will_paginate %>
+    <% else %>
+      <div class="alert alert-danger"><%= t "admin.teams.empty" %></div>
+    <% end %>
+  </div>
+</div>
+

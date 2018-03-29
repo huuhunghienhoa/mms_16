@@ -15,4 +15,5 @@ upload:
   logo_height: 300
 paginate:
   per_page: 10
-
+project:
+  min_name: 5

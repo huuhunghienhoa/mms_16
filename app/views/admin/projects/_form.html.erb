@@ -1,0 +1,26 @@
+<%= form_for [:admin, @project] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name, class: "form-control" %><br>
+
+  <%= f.label :start_date %>
+  <%= f.date_select :date_start, start_year: 2000, order:  [:day, :month, :year] %><br>
+
+  <%= f.label :end_date %>
+  <%= f.date_select :date_end, start_year: 2000, order:  [:day, :month, :year] %><br>
+
+  <%= f.label :team %><br>
+  <%= f.collection_select :team_id, @teams, :id, :name %><br>
+
+  <%= f.label :members %><br>
+  <%= f.collection_select(:user_ids, @users, :id, :name, {},
+  {:class=>"form-control chosen-select", id: "team_user_ids", multiple: true,
+  data: { placeholder: t("admin.projects.project.choose_leader") }})%>
+  <button type="reset" id="emptymember" class="btn btn-success"><%= t "admin.projects.project.empty" %></button><br>
+
+  <%= f.label :leader %><br>
+  <%= f.collection_select(:leader_id, @users, :id, :name,{ include_blank: t("admin.projects.project.choose_leader")}, id: "team_leader_id" )%>
+
+  <%= f.submit :submit, class: "btn btn-primary" %>
+<% end %>
+<%= javascript_include_tag "team" %>

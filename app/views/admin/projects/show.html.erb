@@ -1,0 +1,16 @@
+<% provide :title, t("admin.teams.members") %>
+<h1><%= t "admin.teams.members" %></h1>
+<div class="row">
+  <div class="col-lg-3">
+    <%= render "admin/share/sidebar" %>
+  </div>
+  <div class="col-lg-6">
+    <% if @project.users.any? %>
+      <% @project.users.each do |user| %>
+        <%= link_to user.name, [:admin, user] %> |
+      <% end %>
+    <% else %>
+       <div class="alert alert-danger"><%= t "admin.projects.empty" %></div>
+    <% end %>
+  </div>
+</div>

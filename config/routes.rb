@@ -24,6 +24,9 @@ Rails.application.routes.draw do
         patch "move-team", to: "management_users#update_to_other_team"
         delete "delete-team", to: "management_users#delete_from_team"
       end
+      collection do
+        get "user-by-team", to: "management_users#load_user_by_team"
+      end
     end
 
     resources :management_teams do
@@ -33,5 +36,6 @@ Rails.application.routes.draw do
         patch "empty-member-team", to: "management_teams#empty_member_team"
       end
     end
+    resources :projects
   end
 end

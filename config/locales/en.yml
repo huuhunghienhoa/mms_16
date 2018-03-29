@@ -34,6 +34,7 @@ en:
     application:
       mms_title: "Member Manager System"
       mms_title_short: "MMS"
+      time_default: "%d/%m/%Y"
     header:
       nav_teams: "Teams"
       nav_profile: "Profile"
@@ -164,6 +165,37 @@ en:
     projects:
       title: "Projects"
       create: "New Project"
+      all: "All Projects"
+      empty: "Empty!"
+      choose_project: "Choose project to filter"
+      filter: "Filter"
+      project:
+        create_success: "Project created!"
+        create_fail: "Creating project was failed"
+        update_success : "Project updated!"
+        update_fail: "Updating project is failed!"
+        delete_success: "Project deleted!"
+        delete_fail: "Deleting project was failed"
+        submit_create: "Create"
+        submit_update: "Update"
+        confirm_delete: "Are you sure?"
+        choose_leader: "Choose a project leader"
+        choose_members: "Choose some members of project"
+        col_name: "Name"
+        col_start_date: "Start date"
+        col_project_leader: "Project leader"
+        col_members: "Members"
+        col_stt: "STT"
+        col_end_date: "End date"
+        col_belong_team: "Belong team"
+        col_tool: "Tool"
+      form:
+        name: "name"
+        start_date: "start date"
+        end_date: "end date"
+        members: "members"
+        belong_team: "belong team"
+        project_leader: "project leader"
   shared:
     error_messages:
       form_error: "The form contains"
